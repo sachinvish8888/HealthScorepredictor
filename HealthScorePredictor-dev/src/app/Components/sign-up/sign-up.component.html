@@ -1,0 +1,104 @@
+
+<div class="outer">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <img src="../../../assets/HomeTransparent.png" alt="Logo Not Found!" width="" height=auto>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="margin-right: 140px;" class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a [routerLink]="['landing']" class="nav-item nav-link fw-bold ">Home</a>
+                    <a [routerLink]="['']" class="nav-item nav-link fw-bold ">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Sign Up</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signupForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="firstName" type="text" placeholder="Firstname">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['firstName'].dirty && signupForm.hasError('required' , 'firstName')" class="text-danger">*FirstName is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="lastName" type="text" placeholder="Lastname">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['lastName'].dirty && signupForm.hasError('required' , 'lastName')" class="text-danger">*LastName is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="age" type="text" placeholder="Age">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['age'].dirty && signupForm.hasError('required' , 'age')" class="text-danger">*Age is required</small>
+                            <div style="display: flex;" class="form-group pt-3">
+                                <label class="px-2">Gender:</label>
+
+                                <div class="custom-control custom-radio custom-control-inline" *ngFor="let gender of genders">
+                                    <input type="radio" id="customRadioInline1" formControlName="gender" class="custom-control-input" [value]="gender">
+                                    <label  class="custom-control-label px-2" >{{gender}}</label>
+                                  </div>
+                                </div> 
+                                <!-- <div style="display: flex;" class="radio" *ngFor="let gender of genders">
+                                   <label>
+                                    <input type="radio" formControlName="gender" [value]="gender">
+                                    {{gender}}
+                                   </label>
+                                  </div> -->
+                                 
+                                <!-- <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="gender" type="text" placeholder="Gender">
+                                </div> -->
+                    
+                            <small *ngIf="signupForm.controls['gender'].dirty && signupForm.hasError('required' , 'gender')" class="text-danger">*Gender is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="email" type="text" placeholder="Enter Email">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required' , 'email')" class="text-danger">*Email is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="password" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <!-- <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input formControlName="password" [type]="type" placeholder="Password">
+                                    
+                                </div>
+                            </div> -->
+                            <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required' , 'password')" class="text-danger">*Password is required</small>
+                            <button routerLink="/login" [disabled]="!signupForm.valid" (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Sign Up</button>
+                            <div class="text-center pt-4 text-muted">Already have account? <a id="forget" routerLink="/login">Login</a></div>
+                        </form>
+                    </div>
+                    <!-- <div class="mx-3 my-2 py-2 bordert">
+                        <div class="text-center py-3">
+                            <a href="https://www.facebook.com" target="_blank" class="px-2"><img src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg"></a>
+                            <a href="https://www.google.com" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" width="200" alt="google logo png suite everything you need know about google newest"></a>
+                            <a href="https://www.github.com" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png" width="200" alt="512x512 logo github icon"></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

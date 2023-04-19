@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Dqm07J/B2r+T2LI3rKYbq6mikXoZfzIWt8rbiyEAuII=",
+  "Source": "HealthScorePredictor",
+  "BasePath": "_content/HealthScorePredictor",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

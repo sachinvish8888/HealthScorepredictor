@@ -1,0 +1,119 @@
+<div class="outer">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <img src="../../../assets/HomeTransparent.png" alt="Logo Not Found!" width="" height=50px>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div style="margin-right: 140px;" class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <div class="navbar-nav">
+              <div class="main">
+              <div class="column1">
+              <a [routerLink]="['/landing']" class="nav-item nav-link fw-bold">Home</a>
+              <a [routerLink]="['/edit-manual-data']" class="nav-item nav-link fw-bold">Edit Existing Record</a>
+            </div>
+            <div class="column2">
+              <a [routerLink]="['/manual-data']" class="nav-item nav-link fw-bold ">Manual Score Check</a>
+              <a [routerLink]="['/upload-file']" class="nav-item nav-link fw-bold">Check Score By PDF</a>
+              <a [routerLink]="['/login']" class="nav-item nav-link fw-bold">Logout</a>   
+            </div>
+          </div>
+          </div>
+        </div>
+    </div>
+  </nav>
+</div>
+<mat-stepper [orientation]="(stepperOrientation | async)!" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      
+      <ng-template matStepLabel>Blood Report Details</ng-template>
+      <div class="outer-div">
+      <div class="left-side">
+        <mat-label>CustomerId : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>CustomerId : </mat-label>
+        <input matInput placeholder="ABC141" formControlName="customerId" required>
+      </mat-form-field><br>
+      <mat-label>Pulse : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Pulse</mat-label>
+        <input matInput placeholder="80bpm" formControlName="pulse" required>
+      </mat-form-field><br>
+      <mat-label>HBP : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>HBP :</mat-label>
+        <input matInput placeholder="14.2" formControlName="hbp" required>
+      </mat-form-field><br>
+      <mat-label>LBP : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>LBP</mat-label>
+        <input matInput placeholder="7.2" formControlName="lbp" required>
+      </mat-form-field><br>
+      <mat-label>Hemoglobin : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Hemoglobin : </mat-label>
+        <input matInput placeholder="36" formControlName="hemoglobin" required>
+      </mat-form-field><br>
+      <mat-label>HBA1C_FBS : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>HBA1C_FBS : </mat-label>
+        <input matInput placeholder="67" formControlName="hba1cfbs" required>
+      </mat-form-field><br>
+      <mat-label>Cholesterol : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cholesterol : </mat-label>
+        <input matInput placeholder="16" formControlName="cholesterol" required>
+      </mat-form-field><br>
+    </div>
+    <div class="right-side">
+      <mat-label>Creatinine : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Creatinine : </mat-label>
+        <input matInput placeholder="2" formControlName="creatinine" required>
+      </mat-form-field><br>
+      <mat-label>SGPT : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>SGPT : </mat-label>
+        <input matInput placeholder="5" formControlName="sgpt" required>
+      </mat-form-field><br>
+      <mat-label>ECG_TMT : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>ECG_TMT :</mat-label>
+        <input matInput placeholder="54" formControlName="ecgtmt" required>
+      </mat-form-field><br>
+      <mat-label>MER : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>MER :</mat-label>
+        <input matInput placeholder="37" formControlName="mer" required>
+      </mat-form-field><br>
+      <mat-label>BMI : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>BMI :</mat-label>
+        <input matInput placeholder="27" formControlName="bmi" required>
+      </mat-form-field><br>
+      <mat-label>ESR : </mat-label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>ESR : </mat-label>
+        <input matInput placeholder="10" formControlName="esr" required>
+      </mat-form-field><br>
+      </div>
+    </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+ 
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+     <h3>You are Now Done.</h3>
+     <a (click)="postData()" [routerLink]="['/wellness-score']">Check How well you Did</a>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
+

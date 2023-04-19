@@ -1,0 +1,72 @@
+<div class="m-2">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="../../../assets/logo.jpg" alt="Logo Not Found!" width="100px" height=auto>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="margin-right: 140px;" class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a [routerLink]="['/landing']" class="nav-item nav-link fw-bold text-primary">Home</a>
+                    <a [routerLink]="['']" class="nav-item nav-link fw-bold text-primary">Contact Us</a>
+                    <a [routerLink]="['/manual-data']" class="nav-item nav-link fw-bold text-primary">Manual Score Check</a>
+                    <a [routerLink]="['/upload-file']" class="nav-item nav-link fw-bold text-primary">Check Score By PDF</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Homepage -->
+    <div class="container">
+      <div class="row">
+        <div class="col-5 mt-5">
+            <h1 class="blockquote text-primary">Welcome Onboard!</h1>
+            <h1>Check Your Health <br>Score Now</h1>
+            <p>Check Your Health Score and Get Suggested On Improvements On Your Health By Our New Exclusive Application Made with the help of the top 200 doctors of the world</p>
+            <b><a style="border-radius: 18px;text-decoration: none;" [routerLink]="['/login']" class="btn btn-primary p-2">Explore Now  &#8594;</a></b>
+        </div>
+          <div class="col-4">
+            <img id="homeImg" src="../../../assets/home.jpg" width="500px" height=auto>
+          </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+
+    <div style=" background-image: linear-gradient(to right, blue , lightblue);border-radius: 25px 25px 0px 0px;" class="container mt-5">
+        <div class="row p-5">
+            <div class="col-sm">
+              <div class="row">
+                <div class="col-3">
+                  <img style="border-radius: 30px;" src="../../../assets/support.png" alt="" width="70px">
+                </div>
+                <div class="col-9">
+                    <h4>Free Support</h4>
+                    <p>Check Your Health Score Now For Free</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="row">
+                <div class="col-3">
+                  <img style="border-radius: 30px;" src="../../../assets/medicine.avif" alt="" width="70px">
+                </div>
+                <div class="col-9">
+                    <h4>Medical Service</h4>
+                    <p>Get Suggestions On How to Improve your Particular Score</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="row">
+                <div class="col-3">
+                  <img style="border-radius: 30px;" src="../../../assets/online.jpg" alt="" width="70px">
+                </div>
+                <div class="col-9">
+                    <h4>Flexible Support</h4>
+                    <p>Open Our App in any device</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+	<ng-container *ngFor="let item of questions;let i = index">
+		<div [hidden]="item.isHidden">
+			{{item.description}} <input [formControlName]="item.type" placeholder="Your {{item.type}}"><br>
+			<button (click)="questions[i].isHidden = true;questions[i + 1] ?questions[i + 1].isHidden = false : false">Next</button>
+            <!-- <button (click)="questions[i].isHidden = false; questions[i - 1]?questions[i-1].isHidden = true : true">Back</button> -->
+		</div>
+	</ng-container>
+</form>

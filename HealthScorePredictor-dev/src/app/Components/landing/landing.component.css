@@ -1,0 +1,21 @@
+.nav-item:hover{
+    text-transform: uppercase;
+}
+@media only screen and (max-width:425px){
+  #homeImg{
+    width: 250px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (max-width:375px){
+  .col-9{
+    width: 350px;
+    margin-top: 30px;
+    
+  }
+}
+@media only screen and (max-width:768px){
+  .col-9{
+    width: 350px;
+  }
+}
